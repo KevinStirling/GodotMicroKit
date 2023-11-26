@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ks4q3j67lhem"]
+
+[ext_resource type="Script" path="res://scenes/function_nodes/follow_mouse/follow_mouse.gd" id="1_3f4lp"]
+
+[node name="follow_mouse" type="Node2D"]
+script = ExtResource("1_3f4lp")

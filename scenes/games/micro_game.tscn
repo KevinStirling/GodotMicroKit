@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://rfu7k2ub7y3k"]
+
+[ext_resource type="Script" path="res://scenes/games/micro_game.gd" id="1_q14v4"]
+[ext_resource type="Texture2D" uid="uid://u2bav0ibc5dh" path="res://icon.svg" id="2_bxbtx"]
+[ext_resource type="PackedScene" uid="uid://bs37mpv0nab4v" path="res://scenes/function_nodes/click_and_drag/click_and_drag.tscn" id="3_2b1bk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fcfyq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u4dau"]
+
+[node name="micro_game" type="Node2D"]
+script = ExtResource("1_q14v4")
+
+[node name="goal" type="Area2D" parent="."]
+position = Vector2(578, 127)
+scale = Vector2(1.10611, 1.10611)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goal"]
+scale = Vector2(4.52934, 4.52934)
+shape = SubResource("CircleShape2D_fcfyq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(572, 417)
+texture = ExtResource("2_bxbtx")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+scale = Vector2(6.3884, 6.3884)
+shape = SubResource("CircleShape2D_u4dau")
+
+[node name="click_and_drag" parent="Sprite2D" instance=ExtResource("3_2b1bk")]
+
+[node name="HUD" type="CanvasGroup" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="HUD"]
+follow_viewport_enabled = true
+
+[node name="GameEndTimerDisplay" type="Label" parent="HUD/CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="GameEndTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
