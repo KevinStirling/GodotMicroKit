@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs37mpv0nab4v"]
+
+[ext_resource type="Script" path="res://scenes/function_nodes/click_and_drag/click_and_drag.gd" id="1_icpvo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dex47"]
+radius = 43.85
+
+[node name="click_and_drag" type="Node2D"]
+script = ExtResource("1_icpvo")
+
+[node name="ClickArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+shape = SubResource("CircleShape2D_dex47")

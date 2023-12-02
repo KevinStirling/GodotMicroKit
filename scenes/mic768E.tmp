@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://ck8rx5sdq82jy"]
+
+[ext_resource type="Script" path="res://scenes/micro_game.gd" id="1_5dmbs"]
+[ext_resource type="PackedScene" uid="uid://ks4q3j67lhem" path="res://scenes/game_pieces/follow_mouse/follow_mouse.tscn" id="2_m231i"]
+[ext_resource type="Texture2D" uid="uid://u2bav0ibc5dh" path="res://icon.svg" id="2_w1huj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fcfyq"]
+
+[node name="micro_game" type="Node2D"]
+script = ExtResource("1_5dmbs")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="goal" type="Area2D" parent="."]
+position = Vector2(872, 313)
+scale = Vector2(1.10611, 1.10611)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goal"]
+scale = Vector2(4.52934, 4.52934)
+shape = SubResource("CircleShape2D_fcfyq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_w1huj")
+
+[node name="follow_mouse" parent="Sprite2D" instance=ExtResource("2_m231i")]
+position = Vector2(1384.71, -211.607)
+scale = Vector2(1, 1)

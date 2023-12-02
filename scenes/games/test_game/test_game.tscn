@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnklfui8rvhg3"]
+
+[ext_resource type="Script" path="res://scenes/games/test_game/test_game.gd" id="1_h1krs"]
+[ext_resource type="PackedScene" uid="uid://ks4q3j67lhem" path="res://scenes/function_nodes/follow_mouse/follow_mouse.tscn" id="2_q4cv7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tggjw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51evq"]
+
+[node name="test_game" type="Node2D" node_paths=PackedStringArray("goal", "game_end_timer")]
+script = ExtResource("1_h1krs")
+goal = NodePath("Area2D")
+game_end_timer = NodePath("GameEndTimer")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(554, 150)
+shape = SubResource("CircleShape2D_tggjw")
+
+[node name="GameEndTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="follow_mouse" parent="Area2D2" instance=ExtResource("2_q4cv7")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("RectangleShape2D_51evq")
