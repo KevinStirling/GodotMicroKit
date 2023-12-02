@@ -1,9 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://roaprccwlnsd"]
+[gd_scene load_steps=7 format=3 uid="uid://roaprccwlnsd"]
 
-[ext_resource type="Script" path="res://scenes/main.gd" id="1_3hqqr"]
-[ext_resource type="Texture2D" uid="uid://cim45b6kichkk" path="res://tile_0064.png" id="1_nvf5y"]
-[ext_resource type="PackedScene" uid="uid://rfu7k2ub7y3k" path="res://scenes/games/another_test/another_test.tscn" id="2_pqrro"]
-[ext_resource type="PackedScene" uid="uid://dnklfui8rvhg3" path="res://scenes/games/test_game/test_game.tscn" id="3_eoe34"]
+[ext_resource type="Script" path="res://scenes/game_manager.gd" id="1_c8cvu"]
+[ext_resource type="Texture2D" uid="uid://cim45b6kichkk" path="res://assets/tile_0064.png" id="1_nvf5y"]
 
 [sub_resource type="Animation" id="Animation_ynero"]
 length = 0.001
@@ -96,8 +94,7 @@ _data = {
 }
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_3hqqr")
-game_list = Array[PackedScene]([ExtResource("2_pqrro"), ExtResource("3_eoe34")])
+script = ExtResource("1_c8cvu")
 
 [node name="TransitionTimer" type="Timer" parent="."]
 wait_time = 2.0
