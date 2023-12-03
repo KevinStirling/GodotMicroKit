@@ -15,6 +15,10 @@ run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/micro_kit/plugin.cfg")
+
 [file_customization]
 
 folder_colors={

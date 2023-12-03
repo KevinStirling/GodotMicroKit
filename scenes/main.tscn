@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://roaprccwlnsd"]
+[gd_scene load_steps=8 format=3 uid="uid://roaprccwlnsd"]
 
-[ext_resource type="Script" path="res://scenes/game_manager.gd" id="1_c8cvu"]
+[ext_resource type="Script" path="res://addons/micro_kit/game_manager.gd" id="1_c8cvu"]
 [ext_resource type="Texture2D" uid="uid://cim45b6kichkk" path="res://assets/tile_0064.png" id="1_nvf5y"]
+[ext_resource type="PackedScene" uid="uid://rfu7k2ub7y3k" path="res://scenes/games/another_test/another_test.tscn" id="2_pqrro"]
 
 [sub_resource type="Animation" id="Animation_ynero"]
 length = 0.001
@@ -95,6 +96,7 @@ _data = {
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_c8cvu")
+game_list = Array[PackedScene]([ExtResource("2_pqrro")])
 
 [node name="TransitionTimer" type="Timer" parent="."]
 wait_time = 2.0
